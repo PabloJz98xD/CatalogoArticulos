@@ -1,4 +1,4 @@
-package Evaluaci.n.Backend.CatalogoArticulos.domain.service;
+package Evaluaci.n.Backend.CatalogoArticulos.domain;
 
 public class Unit {
     private int unitId;

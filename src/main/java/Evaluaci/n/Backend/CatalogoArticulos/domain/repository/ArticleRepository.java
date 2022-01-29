@@ -1,6 +1,6 @@
 package Evaluaci.n.Backend.CatalogoArticulos.domain.repository;
 
-import Evaluaci.n.Backend.CatalogoArticulos.domain.service.Article;
+import Evaluaci.n.Backend.CatalogoArticulos.domain.Article;
 
 import java.util.List;
 import java.util.Optional;

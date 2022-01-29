@@ -1,4 +1,4 @@
-package Evaluaci.n.Backend.CatalogoArticulos.domain.service;
+package Evaluaci.n.Backend.CatalogoArticulos.domain;
 
 public class Article {
     private int articleId;

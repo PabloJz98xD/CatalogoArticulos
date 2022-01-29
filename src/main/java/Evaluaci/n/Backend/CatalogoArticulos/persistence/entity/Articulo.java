@@ -8,8 +8,8 @@ import java.lang.reflect.Array;
 public class Articulo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "idArticulo")
+    private Integer idArticulo;
 
     private String nombre;
 
@@ -24,12 +24,12 @@ public class Articulo {
     private Unidad unidad;
 
 
-    public Integer getId() {
-        return id;
+    public Integer getIdArticulo() {
+        return idArticulo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdArticulo(Integer idArticulo) {
+        this.idArticulo = idArticulo;
     }
 
     public String getNombre() {

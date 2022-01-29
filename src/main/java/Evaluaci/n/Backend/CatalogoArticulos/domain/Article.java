@@ -4,6 +4,7 @@ public class Article {
     private int articleId;
     private String name;
     private int unitId;
+    private String clave;
     private float price;
     private Unit unit;
 
@@ -29,6 +30,14 @@ public class Article {
 
     public void setUnitId(int unitId) {
         this.unitId = unitId;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public float getPrice() {

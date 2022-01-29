@@ -5,6 +5,7 @@ import Evaluaci.n.Backend.CatalogoArticulos.domain.repository.ArticleRepository;
 import Evaluaci.n.Backend.CatalogoArticulos.persistence.crud.ArticuloCrudRepository;
 import Evaluaci.n.Backend.CatalogoArticulos.persistence.entity.Articulo;
 import Evaluaci.n.Backend.CatalogoArticulos.persistence.mapper.ArticleMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,9 @@ import java.util.Optional;
 
 @Repository
 public class ArticuloRepository implements ArticleRepository {
+    @Autowired
     private ArticuloCrudRepository articuloCrudRepository;
+    @Autowired
     private ArticleMapper mapper;
     @Override
     public List<Article> getAll(){

@@ -11,16 +11,18 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {UnitMapper.class})
 public interface ArticleMapper {
-    @Mappings({
+    @Mappings(value = {
             @Mapping(source = "idArticulo", target = "articleId"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "idUnidad", target = "unitId"),
+            @Mapping(source = "clave", target = "key"),
             @Mapping(source = "precio", target = "price"),
-            @Mapping(source = "unidad",target = "unit"),
+            @Mapping(source = "unidad", target = "unit"),
     })
     Article toArticle(Articulo articulo);
     List<Article> toArticles(List<Articulo> articulos);
 
     @InheritInverseConfiguration
+    @Mapping(target = "idUnidad", ignore = true)
     Articulo toArticulo(Article article);
 }

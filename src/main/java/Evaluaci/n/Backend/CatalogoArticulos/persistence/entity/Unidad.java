@@ -13,7 +13,7 @@ public class Unidad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUnidad")
     private Integer idUnidad;
-    private String unidad;
+    private String uni;
 
     @OneToMany(mappedBy = "unidad")
     private List<Articulo> articulos;
@@ -26,11 +26,11 @@ public class Unidad {
         this.idUnidad = idUnidad;
     }
 
-    public String getUnidad() {
-        return unidad;
+    public String getUni() {
+        return uni;
     }
 
-    public void setUnidad(String unidad) {
-        this.unidad = unidad;
+    public void setUni(String uni) {
+        this.uni = uni;
     }
 }

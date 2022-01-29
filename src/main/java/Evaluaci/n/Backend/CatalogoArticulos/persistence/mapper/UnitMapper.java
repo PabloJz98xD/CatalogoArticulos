@@ -11,11 +11,11 @@ import org.mapstruct.Mappings;
 public interface UnitMapper {
     @Mappings({
             @Mapping(source = "idUnidad", target = "unitId"),
-            @Mapping(source = "unidad", target = "unit"),
+            @Mapping(source = "uni", target = "unit"),
     })
     Unit toUnit(Unidad unidad);
 
     @InheritInverseConfiguration
     @Mapping(target = "articulos", ignore = true)
-    Unidad toUnidad(Unit unit);
+    Unidad toUnidad(Unidad unit);
 }

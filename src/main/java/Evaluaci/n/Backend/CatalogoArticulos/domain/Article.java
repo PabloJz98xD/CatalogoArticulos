@@ -5,7 +5,7 @@ public class Article {
     private String name;
     private int unitId;
     private String clave;
-    private float price;
+    private Float price;
     private Unit unit;
 
     public int getArticleId() {

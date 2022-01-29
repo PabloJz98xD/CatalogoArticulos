@@ -19,6 +19,10 @@ public class Articulo {
 
     private Float precio;
 
+    @ManyToOne
+    @JoinColumn(name = "idUnidad", insertable = false,updatable = false)
+    private Unidad unidad;
+
 
     public Integer getId() {
         return id;

@@ -1,32 +1,43 @@
 package Evaluaci.n.Backend.CatalogoArticulos.persistence;
 
+import Evaluaci.n.Backend.CatalogoArticulos.domain.Article;
+import Evaluaci.n.Backend.CatalogoArticulos.domain.repository.ArticleRepository;
 import Evaluaci.n.Backend.CatalogoArticulos.persistence.crud.ArticuloCrudRepository;
 import Evaluaci.n.Backend.CatalogoArticulos.persistence.entity.Articulo;
+import Evaluaci.n.Backend.CatalogoArticulos.persistence.mapper.ArticleMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ArticuloRepository {
+public class ArticuloRepository implements ArticleRepository {
     private ArticuloCrudRepository articuloCrudRepository;
+    private ArticleMapper mapper;
+    @Override
+    public List<Article> getAll(){
+        List<Articulo> articulos = (List<Articulo>) articuloCrudRepository.findAll();
+        return mapper.toArticles(articulos);}
 
-    public List<Articulo> getAll(){return (List<Articulo>) articuloCrudRepository.findAll();}
+    @Override
+    public Optional<List<Article>> getByUnit(int unitId) {
+        List<Articulo> articulos = articuloCrudRepository.findByIdUnidad(unitId);
+        return Optional.of(mapper.toArticles(articulos));
+    }
 
-    public List<Articulo> getByUnidad(int idUnidad) {
-        return articuloCrudRepository.findByIdUnidad(idUnidad);
-        }
+    @Override
+    public Optional<Article> getArticle(int articleId) {
+        return articuloCrudRepository.findById(articleId).map(articulo -> mapper.toArticle(articulo));
+    }
 
-     public Optional<Articulo>  getArticulo(int idArticulo) {
-        return articuloCrudRepository.findById(idArticulo);
-        }
-
-     public Articulo save(Articulo articulo){
-        return articuloCrudRepository.save(articulo);
-        }
-
-     public void delete(int idArticulo) {
-        articuloCrudRepository.deleteById(idArticulo);
+    @Override
+    public Article save(Article article) {
+        Articulo articulo = mapper.toArticulo(article);
+        return mapper.toArticle(articuloCrudRepository.save(articulo));
+    }
+    @Override
+     public void delete(int articleId) {
+        articuloCrudRepository.deleteById(articleId);
         }
 
 }

@@ -19,8 +19,8 @@ public interface ArticleMapper {
             @Mapping(source = "unidad",target = "unit"),
     })
     Article toArticle(Articulo articulo);
-    List<Article> toArtiles(List<Articulo> articulos);
+    List<Article> toArticles(List<Articulo> articulos);
 
     @InheritInverseConfiguration
-    Articulo toArticulo(Articulo articulo);
+    Articulo toArticulo(Article article);
 }

@@ -17,5 +17,5 @@ public interface UnitMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "articulos", ignore = true)
-    Unit toUnidad(Unidad unidad);
+    Unidad toUnidad(Unit unit);
 }

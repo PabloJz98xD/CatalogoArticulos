@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ArticleRepository {
     List<Article> getAll();
     Optional<List<Article>> getByUnit(int unitId);
-    Optional<List<Article>> getArticulo(int articleId);
+    Optional<Article> getArticle(int articleId);
     Article save(Article article);
     void delete(int articleId);
 
